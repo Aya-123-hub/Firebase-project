@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.OFFLINETRANSLATOR" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Add any custom attributes here -->
+    </style>
+</resources>
