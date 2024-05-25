@@ -69,14 +69,23 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
-
+    implementation ("com.google.mlkit:translate:17.0.1")
     implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
-    implementation("com.google.firebase:firebase-analytics:22.0.0")
+    androidTestImplementation(platform("androidx.compose:compose-bom:2024.05.00"))
+    implementation("com.google.firebase:firebase-analytics")
+   // implementation("com.google.firebase:firebase-ml-vision:24.0.3")
 
-    implementation("com.google.firebase:firebase-ml-natural-language")
-    implementation("com.google.firebase:firebase-ml-natural-language-translate:22.0.2")
-    implementation("com.google.firebase:firebase-ml-natural-language-language-id-model:20.0.8")
-    implementation("com.google.firebase:firebase-ml-vision-image-label-model:20.0.2")
+    implementation ("com.google.firebase:firebase-ml-natural-language:19.0.0")
+    implementation ("com.google.firebase:firebase-ml-natural-language-language-id-model:19.0.0")  //For detecting the language of text
+    implementation ("com.google.firebase:firebase-ml-natural-language-translate:19.0.1" ) //For translating text
+    implementation ("com.google.firebase:firebase-ml-vision:20.0.0")  //For detecting text from Image
+
+//    implementation( "com.google.firebase:firebase-ml-natural-language:22.0.0")
+//    implementation("com.google.firebase:firebase-ml-natural-language-translate-model:20.0.8")
+
+//    implementation("com.google.firebase:firebase-ml-natural-language-translate:22.0.2")
+//    implementation("com.google.firebase:firebase-ml-natural-language-language-id-model:20.0.8")
+//    implementation("com.google.firebase:firebase-ml-vision-image-label-model:20.0.2")
 }
 
 

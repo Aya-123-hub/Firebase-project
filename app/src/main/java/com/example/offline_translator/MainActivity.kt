@@ -73,23 +73,35 @@ class MainActivity : AppCompatActivity() {
         spinnerTranslateFrom.adapter = adapter
         spinnerTranslateTo.adapter = adapter
 
-        spinnerTranslateFrom.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                selectedFromLanguage = languageCodes[position]
-                initializeTranslator(selectedFromLanguage, selectedToLanguage)
-            }
 
-            override fun onNothingSelected(parent: AdapterView<*>?) {}
-        }
+        // todo this is cause crash
+//        spinnerTranslateFrom.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+//            override fun onItemSelected(
+//                parent: AdapterView<*>?,
+//                view: View?,
+//                position: Int,
+//                id: Long
+//            ) {
+//                selectedFromLanguage = languageCodes[position]
+//                initializeTranslator(selectedFromLanguage, selectedToLanguage)
+//            }
+//
+//            override fun onNothingSelected(parent: AdapterView<*>?) {}
+//        }
 
-        spinnerTranslateTo.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                selectedToLanguage = languageCodes[position]
-                initializeTranslator(selectedFromLanguage, selectedToLanguage)
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {}
-        }
+//        spinnerTranslateTo.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+//            override fun onItemSelected(
+//                parent: AdapterView<*>?,
+//                view: View?,
+//                position: Int,
+//                id: Long
+//            ) {
+//                selectedToLanguage = languageCodes[position]
+//                initializeTranslator(selectedFromLanguage, selectedToLanguage)
+//            }
+//
+//            override fun onNothingSelected(parent: AdapterView<*>?) {}
+//        }
 
         buttonTranslate.setOnClickListener {
             val inputText = "Text to be translated"
@@ -98,8 +110,9 @@ class MainActivity : AppCompatActivity() {
             textViewTranslationResult.text = translationResult.toString()
         }
 
-        fetchRemoteConfigValues()
+         fetchRemoteConfigValues()
     }
+
 
     private fun initializeTranslator(sourceLanguage: Int, targetLanguage: Int) {
         val options = FirebaseTranslatorOptions.Builder()
